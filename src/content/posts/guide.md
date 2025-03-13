@@ -133,8 +133,7 @@ pnpm preview
 
 ### 部署到 Vercel
 
-登录 Vercel 账号，点击右上角的 Add new... 选择 Project。然后在 Import Git Repository 中选择刚刚 Fork 的仓库，点击 Import 按钮。
+登录 Vercel 账号，点击右上角的 Add new... 选择 Project。然后在 Import Git Repository 中选择刚刚 Fork 的仓库，点击 Import 按钮
 
 进入项目配置页面，直接点击 Deploy 按钮，静静等待部署完成就 👌 了。
-
 Vercel 会为你分配一个域名，你可以在项目设置中设置自定义域名，更多操作请参考 Vercel 文档。
