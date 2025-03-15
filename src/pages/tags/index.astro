@@ -1,21 +1,49 @@
 ---
-import TagList from '@/components/TagList.astro'
-import Highlight from '@/components/Highlight.astro'
-import { getAllTags } from '@/utils/content'
-import PageLayout from '@/layouts/PageLayout.astro'
+import { getBlogCollection, getUniqueTagsWithCount } from 'astro-pure/server'
+import { Button } from 'astro-pure/user'
+import { cn } from 'astro-pure/utils'
+import PageLayout from '@/layouts/BaseLayout.astro'
 
-const allTags = await getAllTags()
+const allPosts = await getBlogCollection()
+const allTags = getUniqueTagsWithCount(allPosts)
+
+const meta = {
+  description: "A list of all the topics I've written about in my posts",
+  title: 'All Tags'
+}
 ---
 
-<PageLayout title="标签">
-  <div class="max-w-[800px] mx-auto px-4 py-16">
-    <header class="space-y-4 mb-8">
-      <h1 class="text-4xl font-bold">
-        <Highlight>标签云</Highlight>
-      </h1>
-      <p>共有 {allTags.length} 个标签。</p>
-    </header>
+<PageLayout {meta}>
+  <Button title='Back' href='/blog' style='back' />
+  <main class='mt-6 lg:mt-10'>
+    <div id='content-header' class='animate'>
+      <h1 class='mb-6 text-3xl font-medium'>Tags</h1>
+    </div>
 
-    <TagList tags={allTags} />
-  </div>
+    <div id='content' class='animate'>
+      {
+        allTags.length > 0 ? (
+          <ul class='flex flex-wrap gap-4'>
+            {allTags.map(([tag, val]) => (
+              <li>
+                <Button
+                  href={`/tags/${tag}`}
+                  style='pill'
+                  class={cn(
+                    'items-start gap-x-1',
+                    val > 2 ? 'rounded-xl px-3 py-1 text-xl' : val > 1 && 'text-lg'
+                  )}
+                >
+                  {tag}
+                  <span class={val > 2 ? 'text-base' : 'text-xs'}>{val}</span>
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Any tag yet.</p>
+        )
+      }
+    </div>
+  </main>
 </PageLayout>
