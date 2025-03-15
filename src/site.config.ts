@@ -86,7 +86,7 @@ export const integ: IntegrationUserConfig = {
     logbook: [
       { date: '2024-07-01', content: 'Lorem ipsum dolor sit amet.' },
       { date: '2024-07-01', content: 'vidit suscipit at mei.' },
-      { date: '2024-07-01', content: 'Quem denique mea id.' }
+      { date: '2024-07-01', content: '我的测试.' }
     ],
     // Yourself link info
     applyTip: [
