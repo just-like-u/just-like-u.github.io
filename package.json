@@ -29,6 +29,7 @@
     "astro-pure": "1.2.5",
     "hastscript": "^9.0.1",
     "katex": "^0.16.21",
+    "lint-staged": "^15.5.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "remarkdown": "^0.2.0",
