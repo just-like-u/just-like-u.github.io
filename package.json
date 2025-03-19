@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/markdown-remark": "^6.3.0",
+    "@astrojs/markdown-remark": "^6.3.1",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/vercel": "^8.0.3",
+    "@astrojs/vercel": "^8.1.2",
     "@playform/compress": "^0.1.7",
-    "@unocss/reset": "^65.4.3",
-    "@waline/client": "^3.5.1",
-    "astro": "^5.5.2",
-    "astro-pure": "1.2.5",
+    "@unocss/reset": "66.1.0-beta.6",
+    "@waline/client": "^3.5.6",
+    "astro": "^5.5.3",
+    "astro-pure": "1.2.6",
     "hastscript": "^9.0.1",
     "katex": "^0.16.21",
     "lint-staged": "^15.5.0",
@@ -35,9 +35,10 @@
     "remark-math": "^6.0.0",
     "remarkdown": "^0.2.0",
     "sharp": "^0.33.5",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "unist-util-visit": "^5.0.0",
-    "unocss": "^65.4.3"
+    "unocss": "66.1.0-beta.6",   
+    "cross-spawn": "^7.0.3"   
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
